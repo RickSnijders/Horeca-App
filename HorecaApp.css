@@ -1,0 +1,28 @@
+body{
+	background-color: black;
+}
+#rekening {
+	background-color: white;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	min-height: 500px;
+}
+
+#fris, #bier, #wijn, #bitterbal8, #bitterbal16, #totaal {
+	margin: 15px;
+}
+
+#fris{
+	margin-top: 40px;
+	padding-top: 10px;
+}
+
+#totaal{
+	border-top: 1px solid black;
+	padding-top: 5px;
+}
+
+#bitterbal8, #bitterbal16 {
+	display: none;
+}
