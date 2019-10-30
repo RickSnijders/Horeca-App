@@ -22,7 +22,8 @@ var geenBestelling = 0
 var totalPriceFris = 0
 var totalPriceBier = 0
 var totalPriceWijn = 0
-var totalPriceBal = 0
+var totalPriceBal8 = 0
+var totalPriceBal16 = 0
 var bitterbal8 = 0
 var bitterbal16 = 0
 
@@ -37,7 +38,7 @@ var bitterbal16 = 0
 				loop2=false
 				while(loop2 == false){	
 					var bestellingFris = prompt("Hoeveel fris wilt u toevoegen aan uw bestelling?");
-					if(isNaN(bestellingFris) || bestellingFris == 0){
+					if(isNaN(bestellingFris) || bestellingFris == 0){ //isNaN bestellingFris checkt of het ingevoerde een number is of niet
 						alert("Dit is geen geldig karakter.");
 						bestellingFris = 0			// Dit zet het aantal besteld naar 0 als er geen geldig karakter is gebruikt
 					}
@@ -49,7 +50,7 @@ var bitterbal16 = 0
 					
 					aantalFris= +aantalFris + +bestellingFris
 					totalPriceFris= prijsFris * aantalFris
-					document.getElementById("fris").innerHTML= aantalFris+ " x Fris"+ " &#8364; " + totalPriceFris
+					document.getElementById("fris").innerHTML= aantalFris+ " x Fris"+ " &#8364; " + totalPriceFris // deze code zorgt ervoor dat de bestelling wordt toegevoegd aan de bon
 
 				}
 
@@ -117,7 +118,7 @@ var bitterbal16 = 0
 							else{
 								loop3= true
 								geenBestelling = 1
-								document.getElementById("bitterbal8").style.display = "block";
+								document.getElementById("bitterbal8").style.display = "block"; // dit zorgt ervoor dat de bitterballen 8 zichtbaar worden op de bon wanneer er wordt besteld
 							
 							}
 
@@ -145,7 +146,7 @@ var bitterbal16 = 0
 					
 
 					else {
-						alert("U kunt alleen een keuze maken tussen 8 en 16. De snacks zijn niet toegevoegd aan de bestelling.")
+						alert("U kunt alleen een keuze maken tussen 8 en 16. De snacks zijn niet toegevoegd aan de bestelling.");
 						bestellingBitterbal = 0
 					}
 					
@@ -158,12 +159,14 @@ var bitterbal16 = 0
 				}
 				
 				break;
-
+				
 			case "stop":
+			console.log(geenBestelling);
 				var totaalAantal = +aantalFris + +aantalBier + +aantalWijn + +aantalBal8 + +aantalBal16
 				var totaalPrijs = +totalPriceFris + +totalPriceBier + +totalPriceWijn + + totalPriceBal8 + +totalPriceBal16
-				if(geenBestelling < 1){
-				alert("U heeft nog niks besteld");
+				// Als geenBestelling 0 is krijg je de melding dat je nog niks hebt besteld
+				if(geenBestelling == 0){ 
+					alert("U heeft nog niks besteld");
 					loop = false
 				}
 
