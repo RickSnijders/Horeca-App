@@ -29,7 +29,7 @@ var bitterbal16 = 0
 
 
 	while(loop == false){
-		var bestelling = prompt("Welke bestelling wilt u toevoegen? \n\nKeuze uit: fris, bier, wijn of snack \n\nGerbuik 'stop' om af te rekenen").toLowerCase();
+		var bestelling = prompt("Welke bestelling wilt u toevoegen? \n\nKeuze uit: fris, bier, wijn of snack \n\nTyp 'stop' om af te rekenen").toLowerCase();
 		switch(bestelling){
 
 
